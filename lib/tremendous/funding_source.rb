@@ -1,6 +1,5 @@
 module Tremendous
   class FundingSource
-
     attr_accessor :id, :method, :meta, :available_cents
 
     def initialize(attributes)
@@ -11,7 +10,7 @@ module Tremendous
       self.meta = attributes[:meta]
     end
 
-    def self.list(filters={})
+    def self.list(filters = {})
       Tremendous::Request.get(
         'funding_sources',
         query: filters.merge(Tremendous.default_options),
